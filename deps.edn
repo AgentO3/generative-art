@@ -4,5 +4,9 @@
         org.apache.commons/commons-math3 {:mvn/version "3.3"}
         incanter {:mvn/version "1.9.3"
                   :exclusions [com.lowagie/itext]}
-        org.clojure/test.check {:mvn/version "0.9.0"}}}
+        org.clojure/test.check {:mvn/version "0.9.0"}}
+ :aliases {:nREPL
+           {:extra-deps {org.clojure/clojure {:mvn/version "1.9.0"}
+                         cider/cider-nrepl {:mvn/version "0.19.0"}}
+            :main-opts ["-m" "nrepl.cmdline" "--middleware" "[cider.nrepl/cider-middleware]"]}}}
 
