@@ -1,0 +1,8 @@
+{:deps {quil {:mvn/version "2.8.0"
+              :exclusions [com.lowagie/itext]}
+        org.clojure/clojure {:mvn/version "1.10.0-RC4"}
+        org.apache.commons/commons-math3 {:mvn/version "3.3"}
+        incanter {:mvn/version "1.9.3"
+                  :exclusions [com.lowagie/itext]}
+        org.clojure/test.check {:mvn/version "0.9.0"}}}
+
