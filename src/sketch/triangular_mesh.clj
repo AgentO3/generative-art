@@ -2,6 +2,8 @@
   (:require [quil.core :as q])
   (:gen-class))
 
+(def pallet [[290 54 36] [289 17 65] [288 7 84] [270 2 96]])
+
 (defn build-mesh
   [h w g]
   (into []
@@ -22,8 +24,8 @@
 
 (defn draw
   []
-  (q/stroke 0 0 0 1)
-  (q/stroke-weight 1)
+  (q/stroke 0 0 0 0.5)
+  (q/stroke-weight 0.5)
   (let [m (build-mesh (q/height) (q/width) 50)]
     (loop [l 0]
       (when (< l (count m))
@@ -34,7 +36,7 @@
               (println "point: " p)
               (when (< p (- (count l1) 1))
                 (q/with-fill
-                  [0 0 0 (rand 1)]
+                  (rand-nth pallet)
                   (if (odd? l)
                     (let [p1 (get l1 p)
                           p2 (get l1 (+ p 1))

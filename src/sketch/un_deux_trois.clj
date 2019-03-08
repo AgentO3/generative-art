@@ -2,6 +2,8 @@
   (:require [quil.core :as q])
   (:gen-class))
 
+(def pallet [[290 54 36] [289 17 65] [288 7 84] [270 2 96]])
+
 (defn draw
   []
   (let [step 20
@@ -11,7 +13,7 @@
      (for [x (range 0 w step)
            y (range 0 h step)]
        (do
-         (q/stroke 0 0 0 (rand 0.5))
+         (apply q/stroke (conj (rand-nth pallet) (rand 1)))
          (q/stroke-weight (rand 3))
          (q/with-translation
            [x y]
